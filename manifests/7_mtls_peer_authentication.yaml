@@ -1,0 +1,15 @@
+# OPTION
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: backend-policy # backend allow only frontend
+  namespace: app
+spec:
+  action: ALLOW
+  selector:
+    matchLabels:
+      app: backend
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/app/sa/front-sa"]
