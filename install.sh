@@ -60,7 +60,7 @@ gcloud container fleet mesh update \
     --management automatic \
     --memberships asm-sample-cluster \
     --project $PROJECT_ID \
-    --location global
+    --location $REGION
 
 # check asm control plane status
 gcloud container fleet mesh describe --project $PROJECT_ID
